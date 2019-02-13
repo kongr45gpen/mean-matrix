@@ -3,6 +3,7 @@
 
 import truecolor
 import math
+from tqdm import trange
 
 XMIN = -5
 XMAX = 5
@@ -33,9 +34,7 @@ Matrix[-4][0].set(2)
 
 maxrange = XMAX * YMAX * 10
 maxrange = 1500
-for r in range(maxrange):
-    if r % 10 == 0:
-        print("Calculating repetition %d (%.2f%%)" % (r, 100 * r/float(maxrange)))
+for r in trange(maxrange):
     for x in range(XMIN - 1, XMAX + 1):
         for y in range(YMIN - 1, YMAX + 1):
             element = Matrix[x][y]
